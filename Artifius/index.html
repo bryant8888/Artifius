@@ -32,11 +32,76 @@
         }
         .menu {
             color: #8dc3ff;
-            background: rgba(27, 43, 58, 0.8);
+            background: rgba(27, 43, 58, 0.9);
             border: 1px solid #8dc3ff;
             font-family: sans-serif;
-            width: 25%;
+            width: 20rem;
             min-height: 35vh;
+        }
+        .menu-content {
+            margin: 2rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+        p, h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 0;
+            margin-top: 0.8rem;
+        }
+
+        form {
+            width: 12rem;
+            margin: 1rem auto;
+        }
+
+        form>label {
+            font-size: 12.5px;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        form>input {
+            margin-bottom: 0.8rem;
+            width: calc(100% - 0.25rem);
+            padding: 0.15rem 0 0.15rem 0.25rem;
+            color: #8dc3ff;
+            background: transparent;
+            border: 1px solid rgba(141, 195, 255, 0.51);
+            outline: 0;
+            font-size: 14px;
+            transition: color 0.2s ease-in-out 0.1s, border-bottom-color 0.2s ease-in-out 0.1s,
+            border-top-color 0.2s ease-in-out 0.1s, border-left-color 0.2s ease-in-out 0.1s,
+            border-right-color 0.2s ease-in-out 0.1s;
+        }
+
+        form>input:active, form>input:focus {
+            color: #8dc3ff;
+            border: 1px solid #8dc3ff;
+        }
+
+        form>input::placeholder {
+            font-size: 14px;
+            color: rgba(103, 141, 189, 0.51);
+        }
+        form>.form-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+        form>.form-buttons>button {
+            width: calc(50% - 0.25rem);
+            color: rgba(141, 195, 255, 0.51);
+            background: transparent;
+            border: 1px solid rgba(141, 195, 255, 0.51);
+            cursor: pointer;
+            transition: color 0.2s ease-in-out 0.1s, border-bottom-color 0.2s ease-in-out 0.1s,
+            border-left-color 0.2s ease-in-out 0.1s, border-right-color 0.2s ease-in-out 0.1s,
+            border-top-color 0.2s ease-in-out 0.1s;
+        }
+        form>.form-buttons>button:hover, form>.form-buttons>button:active, form>.form-buttons>button:focus {
+            color: #8dc3ff;
+            border-color: #8dc3ff;
         }
     </style>
 </head>
@@ -46,6 +111,20 @@
 </div>
 <div class="menu-wrapper">
     <div class="menu">
+        <div class="menu-content">
+            <h2 class="text-center"><img height="35" src="./logo.svg" alt="">Artifius</h2>
+            <p class="text-center">Log in</p>
+            <form>
+                <label>Username or phone</label>
+                <input type="text" placeholder="Enter username or phone">
+                <label>User password</label>
+                <input type="password" placeholder="Enter password">
+                <div class="form-buttons">
+                    <button type="reset">Reset</button>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
 
     </div>
 </div>
