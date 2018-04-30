@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artifius</title>
+    <link rel="stylesheet" href="normalize.css">
+    <style>
+        .background-wrapper {
+            background: black;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            max-height: 100vh;
+            min-height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        #BackgroundVideo {
+            width: 100%;
+        }
+
+        .menu-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu {
+            color: #8dc3ff;
+            background: rgba(27, 43, 58, 0.8);
+            border: 1px solid #8dc3ff;
+            font-family: sans-serif;
+            width: 25%;
+            min-height: 35vh;
+        }
+    </style>
+</head>
+<body>
+<div class="background-wrapper">
+    <video src="./background.mov" autoplay loop id="BackgroundVideo"></video>
+</div>
+<div class="menu-wrapper">
+    <div class="menu">
+
+    </div>
+</div>
+</body>
+</html>
