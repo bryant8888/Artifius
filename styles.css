@@ -38,7 +38,7 @@
     background: rgba(27, 43, 58, 0.9);
     border: 1px solid #8dc3ff;
     font-family: sans-serif;
-    width: 30rem;
+    width: 500px;
     min-height: 35vh;
 }
 
@@ -118,10 +118,24 @@ a.reference {
     justify-content: space-between;
 }
 
+div.form-row>div {
+    width: 47%;
+}
+
 form.long {
-    width: 20rem;
+    width: 400px;
 }
 
 input.long {
-    width: calc(20rem - 6px);
+    width: calc(400px - 6px);
+}
+
+.move-right {
+    margin-left: auto;
+}
+
+button.half-length {
+    width: calc(50% - 12px) !important;
+    padding-right: 0;
+    padding-left: 0;
 }
