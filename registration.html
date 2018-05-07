@@ -24,30 +24,54 @@
                 </div>
                 <div class="form-row">
                     <div>
-                        <label>User phone<sub>*</sub></label>
+                        <label>User phone<sup>*</sup></label>
                         <input type="text" placeholder="Enter phone">
                     </div>
                     <div>
-                        <label>User email<sub>*</sub></label>
+                        <label>User email<sup>*</sup></label>
                         <input type="text" placeholder="Enter email">
                     </div>
                 </div>
                 <div class="form-row">
                     <div>
-                        <label>User password<sub>*</sub></label>
+                        <label>User password<sup>*</sup></label>
                         <input type="password" placeholder="Enter password">
                     </div>
                     <div>
-                        <label>User password<sub>*</sub></label>
+                        <label>User password<sup>*</sup></label>
                         <input type="password" placeholder="Enter password">
                     </div>
                 </div>
                 <div class="form-row">
                     <div>
-                        <label>User profession</label>
-                        <input class="long" type="text" placeholder="Enter profession">
+                        <label>Your country</label>
+                        <div class="artifius-dropdown" id="CountryDropdown">
+                            <img height="12" src="./down-arrow.svg" alt="" class="arrow-down">
+                            <input type="text" readonly placeholder="Select your country">
+                            <div class="artifius-item-list">
+                                <div class="artifius-item">Portugal</div>
+                                <div class="artifius-item">Indonesia</div>
+                                <div class="artifius-item">Thailand</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label>Your gender</label>
+                        <div class="artifius-dropdown" id="GenderDropdown">
+                            <img height="12" src="./down-arrow.svg" alt="" class="arrow-down">
+                            <input type="text" readonly placeholder="Select your gender">
+                            <div class="artifius-item-list">
+                                <div class="artifius-item">Male</div>
+                                <div class="artifius-item">Female</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <label class="container">
+                    <h6>I'm agree with user pact</h6>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
                 <div class="form-buttons">
                     <button class="move-right half-length"  type="submit">Register</button>
                 </div>
@@ -55,5 +79,45 @@
         </div>
     </div>
 </div>
+
+<script>
+    var dropdownList = [
+        document.getElementById('CountryDropdown'),
+        document.getElementById('GenderDropdown')
+    ];
+
+    dropdownList.forEach(function (value) {
+        var dropdown = value;
+        var inputDropdown;
+        dropdown.tabIndex = 1;
+
+        dropdown.childNodes.forEach(function (element) {
+            if (element.tagName === 'INPUT') {
+                inputDropdown = element;
+            }
+        })
+
+        dropdown.addEventListener('focusin', function () {
+            dropdown.className = 'artifius-dropdown showed';
+        });
+
+        dropdown.addEventListener('focusout', function () {
+            dropdown.className = 'artifius-dropdown';
+        });
+
+        dropdown.childNodes.forEach(function (element) {
+            if (/artifius-item-list/g.test(element.className)) {
+                element.childNodes.forEach(function (item) {
+                    item.addEventListener('click', function (evt) {
+                        dropdown.className = 'artifius-dropdown';
+                        inputDropdown.value = evt.target.innerText;
+                    })
+                })
+            }
+        })
+
+    })
+
+</script>
 </body>
 </html>
